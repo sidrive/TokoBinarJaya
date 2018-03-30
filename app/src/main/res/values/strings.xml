@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Service Motor</string>
+    <string name="masuk_dengan_google">Masuk Dengan Google</string>
+    <string name="error_field_required">Harus di isi!!</string>
+    <string name="ijin_camera">Membutuhkan ijin untuk akses kamera</string>
+
+    <string-array name="list_gender">
+        <item>Laki laki</item>
+        <item>Perempuan</item>
+    </string-array>
+</resources>
