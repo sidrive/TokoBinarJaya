@@ -52,8 +52,9 @@ public class MainPresenter implements BasePresenter {
                 List<Motor> listMotor = new ArrayList<Motor>();
 //                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    Motor motor = postSnapshot.getValue(Motor.class);
                     Log.e("MainPresenter", "onDataChange: " + dataSnapshot.getChildren());
+                    Motor motor = postSnapshot.getValue(Motor.class);
+
                     listMotor.add(motor);
 //                    Log.e("MainPresenter", "onDataChange: " + listMotor);
                 }
@@ -69,7 +70,7 @@ public class MainPresenter implements BasePresenter {
     }
 
     public void updateMotor(Motor motor){
-        categoryService.saveMotor(motor).addOnCompleteListener(task -> activity.succesSaveMotor()).addOnFailureListener(e -> {
+        categoryService.saveBarang(motor).addOnCompleteListener(task -> activity.succesSaveMotor()).addOnFailureListener(e -> {
             activity.showLoading(false);
             Toast.makeText(activity, "Gagal menyimpan motor", Toast.LENGTH_SHORT).show();
         });

@@ -64,8 +64,10 @@ public class AdapterStatusMotor extends Adapter<AdapterStatusMotor.ViewHolder> {
         Motor motor = getItem(position);
         Log.e(TAG, "onBindViewHolder: "+motor);
 
-//        holder.txtplat.setText(motor.getSeri()+" "+motor.getPlat());
-//        holder.txtmerk.setText(motor.getMerk());
+        holder.txtplat.setText(motor.getNama_barang());
+        holder.txtbarcode.setText(motor.getBarcode());
+        holder.txtjml.setText(motor.getJumlah_barang());
+        holder.txtKategori.setText(motor.getKategori());
 
 
 //        float from = motor.getKm_NextService();
@@ -83,73 +85,73 @@ public class AdapterStatusMotor extends Adapter<AdapterStatusMotor.ViewHolder> {
 
 
 
-        final GradientDrawable background = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{Color.BLUE, Color.RED, Color.BLUE, Color.RED});
-        holder.bar.setBackground(background);
-        holder.progresKilometer.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
-            @Override
-            public void onLayoutChange(final View v, final int left, final int top, final int right, final int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
-                background.setBounds(-2 * v.getWidth(), 0, v.getWidth(), v.getHeight());
-                ValueAnimator animation = ValueAnimator.ofInt(0, 2 * v.getWidth());
-                animation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                    @Override
-                    public void onAnimationUpdate(ValueAnimator animation) {
-                        background.setBounds(-2 * v.getWidth() + (int) animation.getAnimatedValue(), 0, v.getWidth() + (int) animation.getAnimatedValue(), v.getHeight());
-                    }
-                });
-                animation.setRepeatMode(ValueAnimator.RESTART);
-                animation.setInterpolator(new LinearInterpolator());
-                animation.setRepeatCount(ValueAnimator.INFINITE);
-                animation.setDuration(3000);
-                animation.start();
-            }
-        });
+//        final GradientDrawable background = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{Color.BLUE, Color.RED, Color.BLUE, Color.RED});
+//        holder.bar.setBackground(background);
+//        holder.progresKilometer.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+//            @Override
+//            public void onLayoutChange(final View v, final int left, final int top, final int right, final int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+//                background.setBounds(-2 * v.getWidth(), 0, v.getWidth(), v.getHeight());
+//                ValueAnimator animation = ValueAnimator.ofInt(0, 2 * v.getWidth());
+//                animation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+//                    @Override
+//                    public void onAnimationUpdate(ValueAnimator animation) {
+//                        background.setBounds(-2 * v.getWidth() + (int) animation.getAnimatedValue(), 0, v.getWidth() + (int) animation.getAnimatedValue(), v.getHeight());
+//                    }
+//                });
+//                animation.setRepeatMode(ValueAnimator.RESTART);
+//                animation.setInterpolator(new LinearInterpolator());
+//                animation.setRepeatCount(ValueAnimator.INFINITE);
+//                animation.setDuration(3000);
+//                animation.start();
+//            }
+//        });
 
 
-        holder.btnUpdateKm.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                // get prompts.xml view
-                LayoutInflater li = LayoutInflater.from(mcontext);
-                View promptsView = li.inflate(R.layout.updatekm, null);
-
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                        mcontext);
-
-                // set prompts.xml to alertdialog builder
-                alertDialogBuilder.setView(promptsView);
-
-                final EditText userInput = (EditText) promptsView
-                        .findViewById(R.id.txtUpdatekm);
-
-                // set dialog message
-                alertDialogBuilder
-                        .setCancelable(false)
-                        .setPositiveButton("Update",
-                                new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog,int id) {
-
-//                                    motor.setKm_now(Integer.valueOf(userInput.getText().toString()));
-
-                                        activity.updateKM(motor);
-                                    }
-                                })
-                        .setNegativeButton("Cancel",
-                                new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {
-                                        dialog.cancel();
-                                    }
-                                });
-
-                // create alert dialog
-                AlertDialog alertDialog = alertDialogBuilder.create();
-
-                // show it
-                alertDialog.show();
-
-            }
-        });
+//        holder.btnUpdateKm.setOnClickListener(new OnClickListener() {
+//
+//            @Override
+//            public void onClick(View arg0) {
+//
+//                // get prompts.xml view
+//                LayoutInflater li = LayoutInflater.from(mcontext);
+//                View promptsView = li.inflate(R.layout.updatekm, null);
+//
+//                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+//                        mcontext);
+//
+//                // set prompts.xml to alertdialog builder
+//                alertDialogBuilder.setView(promptsView);
+//
+//                final EditText userInput = (EditText) promptsView
+//                        .findViewById(R.id.txtUpdatekm);
+//
+//                // set dialog message
+//                alertDialogBuilder
+//                        .setCancelable(false)
+//                        .setPositiveButton("Update",
+//                                new DialogInterface.OnClickListener() {
+//                                    public void onClick(DialogInterface dialog,int id) {
+//
+////                                    motor.setKm_now(Integer.valueOf(userInput.getText().toString()));
+//
+//                                        activity.updateKM(motor);
+//                                    }
+//                                })
+//                        .setNegativeButton("Cancel",
+//                                new DialogInterface.OnClickListener() {
+//                                    public void onClick(DialogInterface dialog, int id) {
+//                                        dialog.cancel();
+//                                    }
+//                                });
+//
+//                // create alert dialog
+//                AlertDialog alertDialog = alertDialogBuilder.create();
+//
+//                // show it
+//                alertDialog.show();
+//
+//            }
+//        });
 
 
     }
@@ -165,14 +167,12 @@ public class AdapterStatusMotor extends Adapter<AdapterStatusMotor.ViewHolder> {
 
         @Bind(R.id.txtPlat)
         TextView txtplat;
-        @Bind(R.id.txtMerk)
-        TextView txtmerk;
-        @Bind(R.id.progresKilometer)
-        ProgressBar progresKilometer;
-        @Bind(R.id.progress)
-        View bar;
-        @Bind(R.id.btnUpdateKm)
-        Button btnUpdateKm;
+        @Bind(R.id.txtBarcode)
+        TextView txtbarcode;
+        @Bind(R.id.txtjml)
+        TextView txtjml;
+        @Bind(R.id.txtKategori)
+        TextView txtKategori;
 
         public ViewHolder(View itemView) {
             super(itemView);

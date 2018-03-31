@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:text="Honda 800 AB123CD"
+                android:text="Dancow 3 plus"
                 android:textStyle="bold"
                 android:textSize="8pt"/>
         </LinearLayout>
@@ -42,14 +42,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:text="Merk Motor " />
+                android:text="Barcode" />
 
             <TextView
-                android:id="@+id/txtMerk"
+                android:id="@+id/txtBarcode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Honda"
+                android:text="0000"
                 android:textAlignment="textEnd"/>
         </LinearLayout>
 
@@ -68,14 +68,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="KM (perkiraan)" />
+                android:text="Kategori" />
 
             <TextView
-                android:id="@+id/txtKm"
+                android:id="@+id/txtKategori"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0000 km"
+                android:text="Non"
                 android:textAlignment="textEnd"/>
         </LinearLayout>
 
@@ -92,46 +92,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Service Terakhir" />
+                android:text="Jumlah" />
 
             <TextView
-                android:id="@+id/txtserviceakhir"
+                android:id="@+id/txtjml"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="01-01-2018"
+                android:text="000"
                 android:textAlignment="textEnd"/>
 
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginTop="5dp">
-
-            <ProgressBar
-                android:id="@+id/progresKilometer"
-                style="@style/MyProgressBarTwo"
-                android:theme="@style/MyProgressBarTwo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"/>
 
 
 
-        </LinearLayout>
 
-
-        <Button
-            android:id="@+id/btnUpdateKm"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:text="Update Kilometer"
-            android:textSize="4pt"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"/>
         <FrameLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"

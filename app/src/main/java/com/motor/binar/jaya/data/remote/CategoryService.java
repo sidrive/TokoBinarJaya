@@ -24,6 +24,6 @@ public class CategoryService {
     }
 
     public DatabaseReference getMotor(String id){
-        return databaseRef.child("motors").child(id);
+        return databaseRef.child("barangs");
     }
 }

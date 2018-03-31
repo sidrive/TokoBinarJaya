@@ -88,6 +88,7 @@ public class EditMotorActivity extends BaseActivity {
 
     @OnClick(R.id.btn_simpan)
     void validateBrg() {
+        Log.e("btnSimpan", "validateBrg: " );
         validate();
     }
 
