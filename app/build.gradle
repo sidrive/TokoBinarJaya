@@ -6,7 +6,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.motor.binar.jaya"
+        applicationId "com.ud.binar.jaya"
         minSdkVersion 21
         targetSdkVersion 25
         multiDexEnabled true

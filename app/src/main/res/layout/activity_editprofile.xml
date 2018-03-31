@@ -42,7 +42,7 @@
                 android:orientation="vertical"
                 android:padding="@dimen/activity_vertical_margin">
 
-                <com.motor.binar.jaya.utils.TypefacedTextView
+                <com.ud.binar.jaya.utils.TypefacedTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:typeface="Roboto-Regular.ttf"
@@ -100,7 +100,7 @@
                 </android.support.design.widget.TextInputLayout>
 
 
-                <com.motor.binar.jaya.utils.TypefacedTextView
+                <com.ud.binar.jaya.utils.TypefacedTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:typeface="Roboto-Regular.ttf"
@@ -124,7 +124,7 @@
                         android:id="@+id/input_jabatan"/>
                 </android.support.design.widget.TextInputLayout>
 
-                <com.motor.binar.jaya.utils.TypefacedTextView
+                <com.ud.binar.jaya.utils.TypefacedTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:typeface="Roboto-Regular.ttf"

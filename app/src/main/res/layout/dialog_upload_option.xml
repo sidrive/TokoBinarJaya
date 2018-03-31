@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:padding="@dimen/activity_horizontal_margin">
 
-    <com.motor.binar.jaya.utils.TypefacedTextView
+    <com.ud.binar.jaya.utils.TypefacedTextView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:typeface="Roboto-Regular.ttf"
