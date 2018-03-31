@@ -1,6 +1,7 @@
 package com.motor.binar.jaya.ui.editprofil;
 
 import com.motor.binar.jaya.base.annotation.ActivityScope;
+import com.motor.binar.jaya.data.remote.CategoryService;
 import com.motor.binar.jaya.data.remote.FirebaseImageService;
 import com.motor.binar.jaya.data.remote.FirebaseUserService;
 import com.motor.binar.jaya.data.remote.UserService;
@@ -26,7 +27,7 @@ public class EditProfilActivityModule {
 
     @ActivityScope
     @Provides
-    EditProfilPresenter provideEditProfilPresenter(UserService userService, FirebaseUserService firebaseUserService, FirebaseImageService firebaseImageService){
-        return new EditProfilPresenter(activity, userService, firebaseUserService, firebaseImageService);
+    EditProfilPresenter provideEditProfilPresenter(UserService userService, FirebaseUserService firebaseUserService, FirebaseImageService firebaseImageService, CategoryService categoryService){
+        return new EditProfilPresenter(activity, userService, firebaseUserService, firebaseImageService, categoryService);
     }
 }

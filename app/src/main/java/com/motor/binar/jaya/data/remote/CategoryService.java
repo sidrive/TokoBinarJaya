@@ -19,8 +19,16 @@ public class CategoryService {
         return databaseRef.child("merk");
     }
 
+    public DatabaseReference getJabatann(){
+        return databaseRef.child("jabatan");
+    }
+
     public DatabaseReference getType(String id){
         return databaseRef.child("type").child(id);
+    }
+
+    public DatabaseReference getJabatan(String id){
+        return databaseRef.child("jabatan").child(id);
     }
 
     public DatabaseReference getSeri(String id){

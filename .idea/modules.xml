@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\Users\s_idrive\Music\ServiceMotor-develop\ServiceMotor.iml" filepath="C:\Users\s_idrive\Music\ServiceMotor-develop\ServiceMotor.iml" />
       <module fileurl="file://$PROJECT_DIR$/ServiceMotor-develop.iml" filepath="$PROJECT_DIR$/ServiceMotor-develop.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

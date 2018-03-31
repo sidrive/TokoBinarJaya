@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Service Motor</string>
+    <string name="app_name">UD Binar Jaya</string>
     <string name="masuk_dengan_google">Masuk Dengan Google</string>
     <string name="error_field_required">Harus di isi!!</string>
     <string name="ijin_camera">Membutuhkan ijin untuk akses kamera</string>
@@ -7,5 +7,13 @@
     <string-array name="list_gender">
         <item>Laki laki</item>
         <item>Perempuan</item>
+    </string-array>
+
+    <string-array name="list_jabatan">
+        <item>Supervisor</item>
+        <item>Owner</item>
+        <item>Data Entry</item>
+        <item>Kasir</item>
+        <item>Pramuniaga</item>
     </string-array>
 </resources>

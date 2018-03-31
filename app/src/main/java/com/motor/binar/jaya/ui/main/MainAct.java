@@ -86,12 +86,32 @@ public class MainAct extends BaseActivity {
 
         String token = FirebaseInstanceId.getInstance().getToken();
         presenter.updateFCMToken(user.getUid(),token);
+        verifiUser();
         init();
         initProfilePhoto();
         initRecycleView();
         initMotor();
         initPager();
+        initLog();
     }
+
+    private void verifiUser() {
+        if(user.getFull_name() == null){
+            EditProfilActivity.startWithUser(this, user,true);
+        }
+    }
+
+    private void initLog() {
+        int i = 15;
+        if(i%3==0){
+            Log.e("BINAR", "habis dibagi tiga");
+        }else if(i%5==0){
+            Log.e("BINAR", "habis diabagi lima");
+        }else if(i%3==0 && i%5==0){
+            Log.e("BINAR", "habis dibagi 3 dan 5");
+        }
+    }
+
     @Override
     protected void setupActivityComponent() {
         BaseApplication.get(this).getUserComponent()

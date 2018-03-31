@@ -105,43 +105,23 @@
                     android:layout_height="wrap_content"
                     app:typeface="Roboto-Regular.ttf"
                     android:layout_marginTop="@dimen/activity_vertical_margin"
-                    android:layout_marginBottom="@dimen/activity_vertical_margin"
-                    android:text="Keterangan Motor"
+                    android:text="Jabatan :"
                     android:layout_marginLeft="5dp"
                     android:textSize="16sp"/>
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:id="@+id/layout_input_jabatan">
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Merk Motor"
-                        android:id="@+id/input_merk"/>
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Jenis Motor"
-                        android:inputType="text"
-                        android:maxLines="1"
-                        android:id="@+id/input_jenis"/>
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Nomor Kendaraan (Plat)"
-                        android:inputType="text"
-                        android:maxLines="1"
-                        android:id="@+id/input_plat"/>
+                        android:hint=""
+                        android:text="Pilih Jabatan Anda"
+                        android:focusable="false"
+                        android:editable="false"
+                        android:drawableRight="@drawable/arrow_down"
+                        android:id="@+id/input_jabatan"/>
                 </android.support.design.widget.TextInputLayout>
 
                 <com.motor.binar.jaya.utils.TypefacedTextView

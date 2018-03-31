@@ -22,6 +22,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,6 +31,7 @@ import com.motor.binar.jaya.MainActivity;
 import com.motor.binar.jaya.R;
 import com.motor.binar.jaya.base.BaseActivity;
 import com.motor.binar.jaya.base.BaseApplication;
+import com.motor.binar.jaya.data.model.Category;
 import com.motor.binar.jaya.data.remote.model.User;
 import com.motor.binar.jaya.ui.dialog.DialogUploadOption;
 import com.motor.binar.jaya.ui.dialog.DialogUploadOption.OnDialogUploadOptionClickListener;
@@ -50,6 +52,7 @@ import pub.devrel.easypermissions.EasyPermissions;
 import pub.devrel.easypermissions.EasyPermissions.PermissionCallbacks;
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import com.motor.binar.jaya.ui.main.MainAct;
 import com.motor.binar.jaya.utils.DateFormater;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImage.ActivityResult;
@@ -100,6 +103,9 @@ public class EditProfilActivity extends BaseActivity implements OnDateSetListene
     @Bind(R.id.layout_input_gender)
     TextInputLayout inputLayoutGender;
 
+    @Bind(R.id.layout_input_jabatan)
+    TextInputLayout inputLayoutJabatan;
+
     @Bind(R.id.input_birthday)
     EditText inputBirthDay;
 
@@ -112,14 +118,8 @@ public class EditProfilActivity extends BaseActivity implements OnDateSetListene
     @Bind(R.id.input_phone)
     EditText inputPhone;
 
-    @Bind(R.id.input_plat)
-    EditText inputPlatMotor;
-
-    @Bind(R.id.input_jenis)
-    EditText inputJenisMotor;
-
-    @Bind(R.id.input_merk)
-    EditText inputMerk;
+    @Bind(R.id.input_jabatan)
+    TextView inputJabatan;
 
     @Bind(R.id.img_avatar)
     CircleImageView imgAvatar;
@@ -131,9 +131,14 @@ public class EditProfilActivity extends BaseActivity implements OnDateSetListene
     User user;
 
     CharSequence[] charGenders;
+    CharSequence[] charJabatans;
+
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
+
     int genderVal = 3;
+    int jabatanVal = 5;
+
     long dateBirthDay = 0;
 
     byte[] imgSmall;
@@ -141,9 +146,8 @@ public class EditProfilActivity extends BaseActivity implements OnDateSetListene
 
     boolean register = false;
 
-    private int bankVal = 0;
 
-    public static void startWithUser(BaseActivity activity, final User user, boolean register) {
+   public static void startWithUser(BaseActivity activity, final User user, boolean register) {
         Intent intent = new Intent(activity, EditProfilActivity.class);
         intent.putExtra("register", register);
         BaseApplication.get(activity).createUserComponent(user);
@@ -184,6 +188,7 @@ public class EditProfilActivity extends BaseActivity implements OnDateSetListene
         setTitle("Ubah Data Profil");
 
         charGenders = getResources().getStringArray(R.array.list_gender);
+        charJabatans = getResources().getStringArray(R.array.list_jabatan);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -213,7 +218,7 @@ public class EditProfilActivity extends BaseActivity implements OnDateSetListene
 
         if (id == android.R.id.home) {
       /*finish();*/
-            MainActivity.startWithUser(this, user);
+            MainAct.startWithUser(this, user);
         }
 
         if (id == R.id.menu_done) {
@@ -280,6 +285,8 @@ public class EditProfilActivity extends BaseActivity implements OnDateSetListene
         }
     }
 
+
+
     private void init() {
         inputEmail.setText(mUser.getEmail());
         inputEmail.setEnabled(false);
@@ -296,17 +303,12 @@ public class EditProfilActivity extends BaseActivity implements OnDateSetListene
         if (user.getGender() != null) {
             initGender(user.getGender());
         }
-    /*if (user.getEmail() != null) {
-      inputEmail.setText(user.getEmail());
-    }*/
+
         if (user.getPhone() != null) {
             inputPhone.setText(user.getPhone());
         }
-        if (user.getMerkMotor() != null) {
-            inputMerk.setText(user.getMerkMotor());
-        }
-        if (user.getJenisMotor() != null) {
-            inputJenisMotor.setText(user.getJenisMotor());
+        if (user.getJabatan() != null) {
+            inputJabatan.setText(user.getJabatan());
         }
         if (user.getPhoto_url() != null) {
             if (!user.getPhoto_url().equals("NOT")) {
@@ -316,10 +318,6 @@ public class EditProfilActivity extends BaseActivity implements OnDateSetListene
                         .dontAnimate()
                         .into(imgAvatar);
             }
-        }
-
-       if (user.getPlatMotor() != null) {
-            inputPlatMotor.setText(user.getPlatMotor());
         }
 
         if (!register) {
@@ -360,6 +358,11 @@ public class EditProfilActivity extends BaseActivity implements OnDateSetListene
         showDialogGender();
     }
 
+    @OnClick(R.id.input_jabatan)
+    void showJabatan() {
+        showDialogJabatan();
+    }
+
     @OnClick(R.id.btn_upload_avatar)
     void showDialogUploadOption() {
         DialogUploadOption dialogUploadOption = new DialogUploadOption(this);
@@ -393,6 +396,24 @@ public class EditProfilActivity extends BaseActivity implements OnDateSetListene
 
                 inputGender.setText(whichIs);
                 genderVal = which;
+
+                dialog.dismiss();
+
+            }
+        });
+        alert.show();
+    }
+
+    private void showDialogJabatan() {
+        final AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Jabatan");
+        alert.setSingleChoiceItems(charJabatans, jabatanVal, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String whichIs = charJabatans[which].toString();
+
+                inputJabatan.setText(whichIs);
+                jabatanVal = which;
 
                 dialog.dismiss();
 
@@ -469,19 +490,15 @@ public class EditProfilActivity extends BaseActivity implements OnDateSetListene
             user.setPhoto_url(url);
         }
         presenter.updateProfile(user);
+        Log.e(TAG, "successUploadImage: "+user );
 
     }
 
     public void successUpdateProfile(User user) {
         showLoading(false);
         if (register) {
-            if (user.isAcceptTOS()) {
-                /*VerificationActivity.startWithUser(this, user);*/
-                MainActivity.startWithUser(this, user);
+            MainAct.startWithUser(this, user);
 
-            } else {
-                MainActivity.startWithUser(this, user);
-            }
         } else {
             Toast.makeText(this, "Data Tersimpan", Toast.LENGTH_SHORT).show();
             BaseApplication.get(this).createUserComponent(user);
@@ -505,10 +522,24 @@ public class EditProfilActivity extends BaseActivity implements OnDateSetListene
         if (genderVal == 1) {
             gender = "F";
         }
+
+        String jabatan = "";
+        if (jabatanVal == 0) {
+            jabatan = "Supervisor";
+        }
+        if (jabatanVal == 1) {
+            jabatan = "Owner";
+        }
+        if (jabatanVal == 2) {
+            jabatan = "Data Entry";
+        }
+        if (jabatanVal == 3) {
+            jabatan = "Kasir";
+        }
+        if (jabatanVal == 4) {
+            jabatan = "Pramuniaga";
+        }
         String phone = inputPhone.getText().toString();
-        String platmotor = inputPlatMotor.getText().toString();
-        String merkmotor = inputMerk.getText().toString();
-        String jenismotor = inputJenisMotor.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
@@ -532,13 +563,7 @@ public class EditProfilActivity extends BaseActivity implements OnDateSetListene
             }
         }
 
-       if (TextUtils.isEmpty(platmotor)) {
-            inputPlatMotor.setError(strErrRequired);
-            focusView = inputPlatMotor;
-            cancel = true;
-        }
-
-        if (!TextUtils.isEmpty(phone)) {
+       if (!TextUtils.isEmpty(phone)) {
             if (!isValidPhoneNumber(phone)) {
                 inputPhone.setError("Phone number not valid");
                 focusView = inputPhone;
@@ -550,21 +575,21 @@ public class EditProfilActivity extends BaseActivity implements OnDateSetListene
             focusView.requestFocus();
         } else {
 
-            user.setAcceptTOS(true);
             user.setFull_name(name);
             user.setEmail(email);
-            user.setPlatMotor(platmotor);
+
             if (!TextUtils.isEmpty(phone)) {
                 user.setPhone(phone);
             }
-            if (!TextUtils.isEmpty(merkmotor)) {
-                user.setMerkMotor(merkmotor);
+            if (!TextUtils.isEmpty(jabatan)) {
+                user.setJabatan(jabatan);
             }
-            if (!TextUtils.isEmpty(jenismotor)) {
-                user.setJenisMotor(jenismotor);
-            }
+
             if (genderVal != 3) {
                 user.setGender(gender);
+            }
+            if (jabatanVal != 5) {
+                user.setJabatan(jabatan);
             }
             if (dateBirthDay != 0) {
                 user.setBirthday(dateBirthDay);
@@ -572,15 +597,9 @@ public class EditProfilActivity extends BaseActivity implements OnDateSetListene
             if (register) {
                 user.setCreatedAt(System.currentTimeMillis());
             }
-            if (!register) {
-                user.setUpdateAt(System.currentTimeMillis());
-            }
-
-            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-            Date date = new Date();
-            String updateAt = dateFormat.format(date);
 
             if (imgOriginal != null) {
+                Log.e(TAG, "validate: "+user );
                 presenter.uploadAvatar(user, imgSmall, imgOriginal);
             } else {
                 presenter.updateProfile(user);

@@ -16,6 +16,7 @@ import com.motor.binar.jaya.R;
 import com.motor.binar.jaya.base.BaseActivity;
 import com.motor.binar.jaya.base.BaseApplication;
 import com.motor.binar.jaya.data.remote.model.User;
+import com.motor.binar.jaya.ui.main.MainAct;
 
 import javax.inject.Inject;
 
@@ -76,12 +77,12 @@ public class LoginActivity extends BaseActivity {
     }
 
     public void showLoginSuccess(User user) {
-        MainActivity.startWithUser(this, user);
+        MainAct.startWithUser(this, user);
         finish();
     }
 
     public void showRegisterUser(User user){
-        MainActivity.startWithUser(this, user);
+        MainAct.startWithUser(this, user);
         /*EditProfileActivity.startWithUser(this, user, true);*/
         Toast.makeText(this, "Berhasil Masuk", Toast.LENGTH_LONG).show();
         finish();
