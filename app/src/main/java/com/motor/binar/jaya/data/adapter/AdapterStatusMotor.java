@@ -64,21 +64,21 @@ public class AdapterStatusMotor extends Adapter<AdapterStatusMotor.ViewHolder> {
         Motor motor = getItem(position);
         Log.e(TAG, "onBindViewHolder: "+motor);
 
-        holder.txtplat.setText(motor.getSeri()+" "+motor.getPlat());
-        holder.txtmerk.setText(motor.getMerk());
+//        holder.txtplat.setText(motor.getSeri()+" "+motor.getPlat());
+//        holder.txtmerk.setText(motor.getMerk());
 
 
-        float from = motor.getKm_NextService();
-        float from1 = motor.getKm_now();
-        float hasil = (from1/from)*100;
-        Log.e(TAG, "onBindViewHolder: "+hasil);
-        ProgressBarAnimation anim = new ProgressBarAnimation(holder.progresKilometer, hasil-2, hasil);
-        anim.setDuration(1000);
-        anim.setRepeatMode(ValueAnimator.RESTART);
-        anim.setRepeatCount(ValueAnimator.INFINITE);
-        anim.setInterpolator(new LinearInterpolator());
-        holder.progresKilometer.setSecondaryProgress((int) hasil);
-        holder.progresKilometer.startAnimation(anim);
+//        float from = motor.getKm_NextService();
+//        float from1 = motor.getKm_now();
+//        float hasil = (from1/from)*100;
+//        Log.e(TAG, "onBindViewHolder: "+hasil);
+//        ProgressBarAnimation anim = new ProgressBarAnimation(holder.progresKilometer, hasil-2, hasil);
+//        anim.setDuration(1000);
+//        anim.setRepeatMode(ValueAnimator.RESTART);
+//        anim.setRepeatCount(ValueAnimator.INFINITE);
+//        anim.setInterpolator(new LinearInterpolator());
+//        holder.progresKilometer.setSecondaryProgress((int) hasil);
+//        holder.progresKilometer.startAnimation(anim);
 
 
 
@@ -130,7 +130,7 @@ public class AdapterStatusMotor extends Adapter<AdapterStatusMotor.ViewHolder> {
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog,int id) {
 
-                                    motor.setKm_now(Integer.valueOf(userInput.getText().toString()));
+//                                    motor.setKm_now(Integer.valueOf(userInput.getText().toString()));
 
                                         activity.updateKM(motor);
                                     }

@@ -3,14 +3,10 @@ package com.motor.binar.jaya.data.remote.user;
 import com.motor.binar.jaya.base.annotation.UserScope;
 import com.motor.binar.jaya.data.editMotor.EditMotorComponent;
 import com.motor.binar.jaya.data.editMotor.EditMotorModule;
-import com.motor.binar.jaya.data.inputMotor.InputmotorComponent;
-import com.motor.binar.jaya.data.inputMotor.InputmotorModule;
 import com.motor.binar.jaya.data.main.MainComponent;
 import com.motor.binar.jaya.data.main.MainModule;
 import com.motor.binar.jaya.ui.editmotor.EditMotorActivityComponent;
 import com.motor.binar.jaya.ui.editmotor.EditMotorActivityModule;
-import com.motor.binar.jaya.ui.inputMotor.InputMotorComponent;
-import com.motor.binar.jaya.ui.inputMotor.InputMotorModule;
 import com.motor.binar.jaya.ui.editprofil.EditProfilActivityComponent;
 import com.motor.binar.jaya.ui.editprofil.EditProfilActivityModule;
 import com.motor.binar.jaya.ui.main.MainActivityComponent;
@@ -33,7 +29,7 @@ public interface UserComponent {
 //    IntroActivityComponent plus(IntroActivityModule activityModule);
 //
     MainActivityComponent plus(MainActivityModule activityModule);
-    InputMotorComponent plus(InputMotorModule activityModule);
+//    InputMotorComponent plus(InputMotorModule activityModule);
     EditMotorActivityComponent plus(EditMotorActivityModule activityModule);
 //
 //    InputmotorComponent plus(InputmotorModule mainModule);
@@ -41,8 +37,6 @@ public interface UserComponent {
     EditProfilActivityComponent plus(EditProfilActivityModule activityModule);
 
     MainComponent plus(MainModule mainModule);
-
-    InputmotorComponent plus(InputmotorModule inputMotorModule);
 
     EditMotorComponent plus(EditMotorModule editMotorModule);
 //

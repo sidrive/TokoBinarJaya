@@ -16,4 +16,11 @@
         <item>Kasir</item>
         <item>Pramuniaga</item>
     </string-array>
+
+    <string-array name="list_kategori">
+        <item>Food</item>
+        <item>Non Food</item>
+        <item>Fashion</item>
+        <item>Alat Rumah Tangga</item>
+    </string-array>
 </resources>

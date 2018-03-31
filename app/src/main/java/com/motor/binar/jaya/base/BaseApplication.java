@@ -12,8 +12,6 @@ import com.google.firebase.FirebaseApp;
 import com.motor.binar.jaya.base.config.DefaultConfig;
 import com.motor.binar.jaya.data.editMotor.EditMotorComponent;
 import com.motor.binar.jaya.data.editMotor.EditMotorModule;
-import com.motor.binar.jaya.data.inputMotor.InputmotorComponent;
-import com.motor.binar.jaya.data.inputMotor.InputmotorModule;
 import com.motor.binar.jaya.data.main.MainComponent;
 import com.motor.binar.jaya.data.main.MainModule;
 import com.motor.binar.jaya.data.model.Motor;
@@ -25,7 +23,6 @@ import com.motor.binar.jaya.data.remote.network.NetworkModule;
 import com.motor.binar.jaya.data.remote.user.UserComponent;
 import com.motor.binar.jaya.data.remote.user.UserModule;
 import com.motor.binar.jaya.ui.editmotor.EditMotorActivity;
-import com.motor.binar.jaya.ui.inputMotor.InputMotorActivity;
 import com.motor.binar.jaya.ui.main.MainAct;
 
 public class BaseApplication extends MultiDexApplication {
@@ -34,7 +31,6 @@ public class BaseApplication extends MultiDexApplication {
     private MainComponent mainComponent;
     private MotorComponent motorComponent;
     private DefaultConfig defaultConfig;
-    private InputmotorComponent inputmotorComponent;
     private EditMotorComponent editMotorComponent;
 //    private LocationComponent locationComponent;
 //    private OrderDetailComponent orderDetailComponent;
@@ -106,10 +102,7 @@ public class BaseApplication extends MultiDexApplication {
         return mainComponent;
     }
 
-    public InputmotorComponent createInputMotorComponent(InputMotorActivity activity){
-        inputmotorComponent = userComponent.plus(new InputmotorModule(activity));
-        return inputmotorComponent;
-    }
+
 
     public EditMotorComponent createEditMotorComponent(EditMotorActivity activity){
         editMotorComponent = userComponent.plus(new EditMotorModule(activity));

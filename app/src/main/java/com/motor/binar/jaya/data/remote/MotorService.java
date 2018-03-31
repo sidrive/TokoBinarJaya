@@ -25,6 +25,6 @@ public class MotorService {
     }
 
     public Task<Void> saveMotor(Motor motor){
-        return databaseRef.child("motors").child(motor.getIdmotor()).setValue(motor);
+        return databaseRef.child("motors").child(motor.getIdbarang()).setValue(motor);
     }
 }

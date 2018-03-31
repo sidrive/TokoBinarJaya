@@ -26,8 +26,8 @@ import com.motor.binar.jaya.base.BaseApplication;
 import com.motor.binar.jaya.data.adapter.AdapterStatusMotor;
 import com.motor.binar.jaya.data.model.Motor;
 import com.motor.binar.jaya.data.remote.model.User;
+import com.motor.binar.jaya.ui.editmotor.EditMotorActivity;
 import com.motor.binar.jaya.ui.editprofil.EditProfilActivity;
-import com.motor.binar.jaya.ui.inputMotor.InputMotorActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -152,7 +152,7 @@ public class MainAct extends BaseActivity {
 
     @OnClick(R.id.button2)
     public void test(){
-        InputMotorActivity.startWithUser(this, user);
+        EditMotorActivity.startWithMotor(this, motor);
     }
 
     @OnClick(R.id.button3)

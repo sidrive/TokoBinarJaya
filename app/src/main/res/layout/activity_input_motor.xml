@@ -30,112 +30,7 @@
             android:background="@drawable/bg_radius_white_selector"
             android:orientation="vertical">
 
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp">
 
-                <LinearLayout
-                    android:id="@+id/ln_merk"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_radius_white_selector"
-                    android:clickable="true"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/imglogo"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:background="@drawable/button_radius_white_selector"
-                        android:padding="5dp"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/ic_logo_honda" />
-
-                    <TextView
-                        android:id="@+id/txtMerk"
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="2dp"
-                        android:layout_weight="1"
-                        android:drawableRight="@drawable/arrow_down"
-                        android:text="Merk Motor"
-                        android:textSize="10pt" />
-
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp">
-
-                <LinearLayout
-                    android:id="@+id/ln_type"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_radius_white_selector"
-                    android:clickable="true"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:background="@drawable/button_radius_white_selector"
-                        android:padding="5dp"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/ic_type_motor" />
-
-                    <TextView
-                        android:id="@+id/txtType"
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="2dp"
-                        android:layout_weight="1"
-                        android:drawableRight="@drawable/arrow_down"
-                        android:text="Type Motor"
-                        android:textSize="10pt" />
-
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp">
-
-                <LinearLayout
-                    android:id="@+id/ln_seri"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_radius_white_selector"
-                    android:clickable="true"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:background="@drawable/button_radius_white_selector"
-                        android:padding="5dp"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/ic_untitled_varian" />
-
-                    <TextView
-                        android:id="@+id/txtSeri"
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="2dp"
-                        android:layout_weight="1"
-                        android:drawableRight="@drawable/arrow_down"
-                        android:text="Varian"
-                        android:textSize="10pt" />
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -147,53 +42,64 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="No. Plat" />
+                    android:text="Nama Barang" />
 
                 <EditText
-                    android:id="@+id/txt_plat"
+                    android:id="@+id/txt_namabrg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="No Plat"
+                    android:hint="Nama Barang"
                     android:inputType="textPersonName" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tgl Pajak"
+                    android:text="Barcode/ID"
                     android:layout_marginTop="8dp"/>
-                <Button
-                    android:id="@+id/btn_pajak"
+                <EditText
+                    android:id="@+id/txt_barcode"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:hint="tgl Pajak"/>
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Barcode/ID"
+                    android:inputType="textPersonName" />
 
                 <TextView
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tahun Pembuatan"
+                    android:text="Jumlah"
                     android:layout_marginTop="8dp"/>
 
-                <Button
-                    android:id="@+id/btn_tahunmtr"
+                <EditText
+                    android:id="@+id/txt_jumlah"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:hint=""/>
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Jumlah Barang"
+                    android:inputType="number" />
 
                 <TextView
                     android:layout_marginTop="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="No. Rangka" />
+                    android:text="Kategori" />
 
-                <EditText
-                    android:id="@+id/txt_norangka"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="No Rangka"
-                    android:inputType="textPersonName" />
+                    android:id="@+id/layout_input_kategori">
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint=""
+                        android:text="Pilih Kategori Barang"
+                        android:focusable="false"
+                        android:editable="false"
+                        android:drawableRight="@drawable/arrow_down"
+                        android:id="@+id/input_kategori"/>
+                </android.support.design.widget.TextInputLayout>
             </LinearLayout>
 
 
