@@ -12,6 +12,8 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -65,6 +67,9 @@ public class MainAct extends BaseActivity {
     @Bind(R.id.listmotor)
     RecyclerView lsmotor;
 
+    @Bind(R.id.button2)
+    Button btnInput;
+
 
     @Inject
     MainPresenter presenter;
@@ -88,11 +93,20 @@ public class MainAct extends BaseActivity {
         presenter.updateFCMToken(user.getUid(),token);
         verifiUser();
         init();
+        initUser();
         initProfilePhoto();
         initRecycleView();
         initMotor();
         initPager();
         initLog();
+    }
+
+    private void initUser() {
+        if(user.getJabatan() == "Data Entry"){
+            btnInput.setVisibility(View.VISIBLE);
+        }else {
+            btnInput.setVisibility(View.INVISIBLE);
+        }
     }
 
     private void verifiUser() {
