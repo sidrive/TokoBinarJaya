@@ -66,7 +66,7 @@ public class AdapterStatusMotor extends Adapter<AdapterStatusMotor.ViewHolder> {
 
         holder.txtplat.setText(motor.getNama_barang());
         holder.txtbarcode.setText(motor.getBarcode());
-        holder.txtjml.setText(motor.getJumlah_barang());
+        holder.txtjml.setText(String.valueOf(motor.getJumlah_barang()));
         holder.txtKategori.setText(motor.getKategori());
 
 
