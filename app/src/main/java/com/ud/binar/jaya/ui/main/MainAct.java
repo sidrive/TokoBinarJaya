@@ -58,8 +58,7 @@ public class MainAct extends BaseActivity {
     @Bind(R.id.txtphone)
     TextView txtphone;
 
-    @Bind(R.id.txtjmlmotor)
-    TextView jmlmotor;
+
 
     @Bind(R.id.txtjabatan)
     TextView txtjabatan;
