@@ -152,15 +152,17 @@ public class EditMotorActivity extends BaseActivity {
             focusView.requestFocus();
         } else{
 
+            barang.setIdbarang(nama+""+barcodeid);
             barang.setNama_barang(nama);
             barang.setBarcode(barcodeid);
             barang.setJumlah_barang(Integer.valueOf(jmlBrg.getText().toString()));
             if (kategoriVal != 5) {
                 barang.setKategori(kategoriBarang);
             }
-            else {
+//            else {
                 presenter.saveBarangs(barang);
-            }
+            Log.e("tag", "validate: "+barang );
+//            }
         }
     }
 

@@ -6,6 +6,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.ud.binar.jaya.data.model.Barang;
 import com.ud.binar.jaya.data.remote.model.EmailConfirmation;
 import com.ud.binar.jaya.data.remote.model.User;
 
@@ -52,6 +53,10 @@ public class UserService {
 
     public void updateUserToken(String uid, String token){
         databaseRef.child("users").child(uid).child("userTokens").child(token).setValue(true);
+    }
+
+    public Task<Void> saveBarang(Barang barang){
+        return databaseRef.child("barangs").child(barang.getIdbarang()).setValue(barang);
     }
 
     public void sendEmailConfirmation(EmailConfirmation emailConfirmation){

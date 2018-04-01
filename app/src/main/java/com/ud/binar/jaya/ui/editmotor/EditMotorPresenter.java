@@ -36,7 +36,7 @@ public class EditMotorPresenter implements BasePresenter {
 
     public void saveBarangs(Barang barang){
         Log.e("InputMotor","idmotor "+ barang.getIdbarang());
-        categoryService.saveBarang(barang).addOnCompleteListener(task -> activity.succesSaveMotor()).addOnFailureListener(e -> {
+        userService.saveBarang(barang).addOnCompleteListener(task -> activity.succesSaveMotor()).addOnFailureListener(e -> {
             activity.showLoading(false);
             Toast.makeText(activity, "Gagal menyimpan ud", Toast.LENGTH_SHORT).show();
         });

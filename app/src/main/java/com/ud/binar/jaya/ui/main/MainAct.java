@@ -61,8 +61,8 @@ public class MainAct extends BaseActivity {
     @Bind(R.id.txtjmlmotor)
     TextView jmlmotor;
 
-    @Bind(R.id.txtserviceakhir)
-    TextView txtserviceakhir;
+    @Bind(R.id.txtjabatan)
+    TextView txtjabatan;
 
     @Bind(R.id.listmotor)
     RecyclerView lsmotor;
@@ -102,7 +102,7 @@ public class MainAct extends BaseActivity {
     }
 
     private void initUser() {
-        if(user.getJabatan() == "Data Entry"){
+        if(user.getJabatan().equals("Data Entry")){
             btnInput.setVisibility(View.VISIBLE);
         }else {
             btnInput.setVisibility(View.INVISIBLE);
@@ -182,6 +182,7 @@ public class MainAct extends BaseActivity {
         txtnama.setText(String.valueOf(user.getFull_name()));
         txtemail.setText(String.valueOf(user.getEmail()));
         txtphone.setText(String.valueOf(user.getPhone()));
+        txtjabatan.setText(String.valueOf(user.getJabatan()));
     }
 
     private void initRecycleView() {

@@ -133,10 +133,10 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="3dp"
-                                    android:text="Service terakhir:" />
+                                    android:text="Jabatan :" />
 
                                 <TextView
-                                    android:id="@+id/txtserviceakhir"
+                                    android:id="@+id/txtjabatan"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="TextView"
@@ -144,27 +144,7 @@
                                     android:textStyle="bold" />
                             </LinearLayout>
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
 
-                                <TextView
-                                    android:id="@+id/textView5"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="3dp"
-                                    android:text="Jumlah Motor :" />
-
-                                <TextView
-                                    android:id="@+id/txtjmlmotor"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="TextView"
-                                    android:textSize="7pt"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
                         </LinearLayout>
 
 
